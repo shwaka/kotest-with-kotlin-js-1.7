@@ -6,38 +6,25 @@ plugins {
     id("io.kotest.multiplatform") version "5.0.2"
 }
 
-group = "me.shun"
+group = "com.example"
 version = "1.0-SNAPSHOT"
 
 repositories {
     mavenCentral()
 }
 
-// dependencies {
-//     testImplementation(kotlin("test"))
-// }
-
 kotlin {
     js {
         binaries.executable()
-        browser {
-            // The following works only on version >= 1.8
-            // commonWebpackConfig {
-            //     cssSupport {
-            //         enabled.set(true)
-            //     }
-            // }
-        }
+        browser {}
         sourceSets {
             val jsMain by getting
 
             val jsTest by getting {
                 dependencies {
-                    implementation(kotlin("test"))
+                    // implementation(kotlin("test"))
                     val kotestVersion = "5.4.1"
                     implementation("io.kotest:kotest-framework-engine:$kotestVersion")
-                    // implementation("io.kotest:kotest-assertions-core:$kotestVersion")
-                    // implementation("io.kotest:kotest-property:$kotestVersion")
                 }
             }
         }
