@@ -24,6 +24,7 @@ kotlin {
                 dependencies {
                     // implementation(kotlin("test"))
                     val kotestVersion = "5.4.1"
+                    // val kotestVersion = "5.4.2"
                     implementation("io.kotest:kotest-framework-engine:$kotestVersion")
                 }
             }
